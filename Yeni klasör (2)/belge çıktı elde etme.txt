@@ -1,0 +1,50 @@
+ Font font = new Font("Arial", 12);
+            SolidBrush firca = new SolidBrush(Color.Black);
+            Pen kalem = new Pen(Color.Black);
+            e.Graphics.DrawString(DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"), font, firca, 660, 5);
+            font = new Font("Segoe UI", 36, FontStyle.Bold);
+            e.Graphics.DrawString("İSTİFA BELGESİ", font, firca, 235, 10);
+
+
+            e.Graphics.DrawRectangle(kalem, new Rectangle(5, 100, 813, 80));
+
+            font = new Font("Segoe UI", 12, FontStyle.Bold);
+            e.Graphics.DrawString("İSİM  :", font, firca, 10, 107);
+            e.Graphics.DrawString("SOYİSİM :", font, firca, 10, 130);
+            e.Graphics.DrawString("T.C. NO :", font, firca, 10, 153);
+
+            font = new Font("Segoe UI", 12);
+            e.Graphics.DrawString(textBox1.Text, font, firca, 100, 107);
+            e.Graphics.DrawString(textBox2.Text, font, firca, 100, 130);
+            e.Graphics.DrawString(textBox3.Text, font, firca, 100, 153);
+
+            int x = 198;
+            int y = 10;
+            int z = 60;
+            int i = 250;
+
+            e.Graphics.DrawLine(kalem, 10, x, 803, x);
+            x = x + 17;
+            e.Graphics.DrawString("AÇIKLAMA", font = new Font("Segoe UI", 14, FontStyle.Bold), firca, 350, x);
+            x = x + 20;
+            font = new Font("Segoe UI", 12);
+            if (textBox4.Text != "")
+            {
+                string[] parcalar;
+
+                parcalar = textBox4.Text.Split('-');
+
+                foreach (string b in parcalar)
+                {
+
+                    e.Graphics.DrawString(b, font, firca, y, x);
+                    x = x + 20;
+                }
+
+            }
+            x = x + 34;
+            e.Graphics.DrawLine(kalem, 10, x, 803, x);
+            x = x + 20;
+            e.Graphics.DrawString("İmza", font, firca, 700, x);
+
+        }
